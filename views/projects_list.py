@@ -1,7 +1,6 @@
 import streamlit as st
 from database import get_database
 from datetime import datetime
-from colorama import Fore
 
 def get_status_color(status):
     if status == "Not Started":
