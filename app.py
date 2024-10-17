@@ -23,52 +23,44 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 st.markdown("""
                 <style>
                 * {
-                    background-color: #0d1117;
-                    color: white; /* Ensure text is always white */
+                    background-color: #0d1117; /* Background color for the entire app */
+                    color: white; /* Ensure all text is white */
                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
                 }
-                .stTextInput {
-                    color: white; /* Text inside input areas is white */
-                    border: 1px solid #30363d;
-                    padding: 10px;
-                    border-radius: 6px;
-                }
+                /* Customize button text */
                 .stButton button {
-                    background-color: #F8331D;
+                    background-color: #F8331D; /* Red background for button */
                     border: none;
-                    color: white;
+                    color: white; /* Button text color */
                     padding: 6px 16px;
                     text-align: center;
                     font-size: 14px;
                     cursor: pointer;
                     border-radius: 6px;
-                    width: 100%; /* Make the button fill the container */
+                    width: 100%; /* Make button fill its container */
                 }
                 .stButton button:hover {
-                    background-color: white;
-                    color: #89251A; /* Ensure the text remains dark red instead of black */
+                    background-color: white; /* Change background on hover */
+                    color: #89251A; /* Dark red text on hover */
                 }
-                .stExpander {
+                /* Customize input fields */
+                .stTextInput input, .stTextArea textarea {
+                    color: white; /* Input text color */
+                    background-color: #30363d; /* Input background color */
                     border: 1px solid #30363d;
-                    border-radius: 6px;
-                    box-shadow: 0 1px 3px rgba(27,31,35,.12);
-                }
-                .stTextInput, .stTextArea {
-                    border: 1px solid #30363d;
-                    color: white; /* Text inside text areas is white */
+                    padding: 10px;
                     border-radius: 6px;
                 }
-                .stTextArea textarea {
-                    border: 1px solid #30363d;
-                    color: white; /* Text inside textarea is white */
-                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+                /* Adjusting other text elements */
+                h1, h2, h3, h4, h5, h6 {
+                    color: white;
                 }
-                h3 {
-                    background-color: #0d1117;
+                p {
                     color: white;
                 }
                 </style>
                 """, unsafe_allow_html=True)
+
 
 def main():
     if 'logged_in' not in st.session_state:
