@@ -72,6 +72,14 @@ st.markdown("""
                 </style>
                 """, unsafe_allow_html=True)
 
+st.markdown("""
+    <style>
+    .stTextInput > label {
+        background-color: transparent;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 def main():
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
