@@ -4,7 +4,7 @@ def apply_custom_css():
     return """
     <style>
     /* Main app styles */
-    .stApp {
+    * {
         background-color: #0D1117;
         color: #C9D1D9;
     }
