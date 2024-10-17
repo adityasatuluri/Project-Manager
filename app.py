@@ -75,6 +75,10 @@ st.markdown("""
                     color: white; /* Text inside textarea is white */
                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
                 }
+                h3 {
+                    background-color: #0d1117;
+                    color: white;
+                }
                 </style>
                 """, unsafe_allow_html=True)
 
