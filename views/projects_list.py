@@ -15,61 +15,46 @@ def get_status_color(status):
 def projects_list_page():
     st.markdown("""
     <style>
-    /* General App Background */
-    body {
-        background-color: #0d1117;
-        color: #c9d1d9;
+    .project-container {
+        background-color: #1E1E1E;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #333;
     }
-    .stApp {
-        background-color: #0d1117;
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
     }
-
-    /* Containers Background */
-    .css-1d391kg {
-        background-color: #0d1117;
-        color: #c9d1d9;
+    .project-name {
+        font-size: 24px;
+        font-weight: bold;
+        color: #FFFFFF;
     }
-    
-    /* Headers */
-    h1, h2, h3, h4, h5, h6 {
-        color: #f0f6fc;
-    }
-
-    /* Input elements (text, text area, etc.) */
-    input, textarea {
-        background-color: #161b22;
-        color: #c9d1d9;
-        border: 1px solid #30363d;
-    }
-    
-    /* Dropdowns and selection elements */
-    .stMultiSelect, .stSelectbox {
-        background-color: #161b22;
-        color: #c9d1d9;
-        border: 1px solid #30363d;
-    }
-
-    /* Buttons */
-    .stButton>button {
-        background-color: #238636;
-        color: white;
-        border-radius: 5px;
-        border: none;
-    }
-
-    /* Expander Header */
-    .st-expanderHeader {
-        background-color: #161b22;
-        color: #c9d1d9;
-        border-bottom: 1px solid #30363d;
-    }
-
-    /* Status labels */
     .project-status {
         font-weight: bold;
         padding: 5px 10px;
         border-radius: 5px;
-        color: #FFFFFF;
+    }
+    .project-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .detail-label {
+        font-weight: bold;
+        color: #888;
+    }
+    .edit-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
     }
     </style>
     """, unsafe_allow_html=True)
