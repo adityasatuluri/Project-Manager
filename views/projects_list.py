@@ -21,14 +21,7 @@ def projects_list_page():
 
     for project in projects:
         status_color = get_status_color(project['status'])
-        with st.expander(project['name']):
-            st.markdown("""
-                <style>
-                .stExpander {
-                    color: green;
-                }
-                </style>
-            """, unsafe_allow_html=True)
+        with st.container(border=True):
             st.markdown(f"""
             <div class="project-container">
                 <div class="project-header">
