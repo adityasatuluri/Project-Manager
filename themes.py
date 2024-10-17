@@ -110,7 +110,7 @@ def apply_custom_css():
     </style>
     """
 
-def apply_custom_css():
+def apply_custom_css2():
     return """
     <style>
     /* Main app styles */
