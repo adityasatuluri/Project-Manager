@@ -37,6 +37,9 @@ def projects_list_page():
     db = get_database()
     projects = list(db.projects.find({"created_by": st.session_state.username}))
 
+    st.markdown(f"""
+        <h1 styles = "background-color: green; color: #0D1117;">Completed</h1>
+    """, unsafe_allow_html=True)
     for project in [i for i in projects if i['status']=="Completed"]:
         status_color = get_status_color(project['status'])
         container1=st.container()
