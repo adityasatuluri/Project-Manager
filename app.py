@@ -13,7 +13,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-
+st.markdown(apply_custom_css(), unsafe_allow_html=True)
 
 
 # Hide Streamlit default elements
