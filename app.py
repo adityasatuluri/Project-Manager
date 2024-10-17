@@ -15,13 +15,12 @@ from views.projects_list import projects_list_page
 from database import get_database
 from utils import hash_password, verify_password
 
-def set_page_config():
-    st.set_page_config(
-        page_title="Project Management App",
-        page_icon="🚀",
-        layout="wide",
-        initial_sidebar_state="expanded",
-    )
+st.set_page_config(
+    page_title="Project Management App",
+    page_icon="🚀",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 
 st.markdown("""
     <style>
@@ -47,7 +46,6 @@ st.markdown("""
 
 
 def main():
-    set_page_config()
     
     st.sidebar.title("🚀 Project Manager")
 
