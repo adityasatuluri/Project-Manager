@@ -12,22 +12,21 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Define Stract-inspired color palette
+# Define refined color palette
 colors = {
-    "background": "#141517",
-    "surface": "#1E2024",
-    "primary": "#676CDB",
-    "secondary": "#343A40",
-    "text": "#E9ECEF",
-    "text_secondary": "#ADB5BD",
-    "border": "#343A40",
-    "success": "#37B24D",
-    "warning": "#FAB005",
-    "error": "#FA5252",
+    "background": "#0D1117",
+    "surface": "#161B22",
+    "primary": "#6E40C9",
+    "secondary": "#30363D",
+    "text": "#C9D1D9",
+    "text_secondary": "#8B949E",
+    "border": "#30363D",
+    "success": "#2EA043",
+    "warning": "#D29922",
+    "error": "#F85149",
 }
 
-
-# Custom CSS with Stract-inspired design
+# Custom CSS with refined Stract-inspired design
 st.markdown(f"""
 <style>
     :root {{
@@ -45,14 +44,17 @@ st.markdown(f"""
         color: var(--text-color);
     }}
     
-    .stTextInput > div > div > input {{
+    .stTextInput > div > div > input,
+    .stTextArea > div > div > textarea {{
         background-color: var(--surface-color);
         color: var(--text-color);
         border: 1px solid var(--border-color);
-        border-radius: 8px;
+        border-radius: 6px;
     }}
     
-    .stTextInput > label {{
+    .stTextInput > label,
+    .stTextArea > label,
+    .stSelectbox > label {{
         color: var(--text-secondary-color);
     }}
     
@@ -60,7 +62,7 @@ st.markdown(f"""
         background-color: var(--primary-color);
         color: white;
         border: none;
-        border-radius: 8px;
+        border-radius: 6px;
         padding: 0.5rem 1rem;
         font-weight: 600;
     }}
@@ -68,11 +70,6 @@ st.markdown(f"""
     .stButton > button:hover {{
         background-color: var(--primary-color);
         opacity: 0.8;
-    }}
-    
-    .stHeader {{
-        background-color: var(--surface-color);
-        color: var(--text-color);
     }}
     
     .stSidebar {{
@@ -84,18 +81,15 @@ st.markdown(f"""
         color: var(--text-secondary-color);
     }}
     
-    .stMetric {{
+    [data-testid="stMetricValue"] {{
         background-color: var(--surface-color);
         border: 1px solid var(--border-color);
-        border-radius: 8px;
+        border-radius: 6px;
         padding: 1rem;
-    }}
-    
-    .stMetric > div {{
         color: var(--text-color);
     }}
     
-    .stMetric > div:first-child {{
+    [data-testid="stMetricLabel"] {{
         color: var(--text-secondary-color);
     }}
     
@@ -103,19 +97,51 @@ st.markdown(f"""
         color: var(--text-color);
     }}
     
+    .stAlert {{
+        background-color: var(--surface-color);
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        border-radius: 6px;
+    }}
+    
     .stSuccess {{
-        background-color: {colors['success']};
+        border-left-color: {colors['success']};
     }}
     
     .stWarning {{
-        background-color: {colors['warning']};
+        border-left-color: {colors['warning']};
     }}
     
     .stError {{
-        background-color: {colors['error']};
+        border-left-color: {colors['error']};
+    }}
+    
+    .stDateInput > div > div > input {{
+        background-color: var(--surface-color);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+    }}
+    
+    .stSelectbox > div > div > div {{
+        background-color: var(--surface-color);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+    }}
+    
+    .stCheckbox > label > div[role="checkbox"] {{
+        background-color: var(--surface-color) !important;
+        border-color: var(--border-color) !important;
+    }}
+    
+    .stCheckbox > label > div[role="checkbox"]::before {{
+        background-color: var(--primary-color) !important;
     }}
 </style>
 """, unsafe_allow_html=True)
+
+# Rest of your Streamlit app code goes here
 
 # Hide Streamlit default elements
 hide_st_style = """
