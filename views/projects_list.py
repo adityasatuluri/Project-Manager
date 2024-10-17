@@ -1,7 +1,7 @@
 import streamlit as st
 from database import get_database
 from datetime import datetime
-from ..theme import github_dark_theme
+from utils.theme import github_dark_theme
 
 def get_status_color(status):
     if status == "Not Started":
