@@ -43,7 +43,7 @@ st.markdown("""
     border-radius: 5px;
 }
 .stTextInput>div>div>input {
-    background-color: #2C2C2C;
+    background-color: #ffffff;
     color: white;
 }
 .stSelectbox>div>div>select {
