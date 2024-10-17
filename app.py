@@ -26,6 +26,8 @@ hide_st_style = """
 """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
+st.sidebar.markdown(apply_custom_css(), unsafe_allow_html=True)
+
 # Rest of your application code remains the same
 def main():
     if 'logged_in' not in st.session_state:
