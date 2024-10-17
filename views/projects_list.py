@@ -36,10 +36,12 @@ def projects_list_page():
                     <span class="project-name">{project['name']}</span>
                     <span class="project-status" style="background-color: {status_color}; color: #0D1117;">{project['status']}</span>
                 </div>
+                <div>
+                    <p><span class="detail-label">Description:</span> {project['description']}</p>
+                </div>
                 <div class="project-details">
                     <div>
                         <p><span class="detail-label">Type:</span> {', '.join(project['type'])}</p>
-                        <p><span class="detail-label">Description:</span> {project['description']}</p>
                         <p><span class="detail-label">Tools:</span> {', '.join(project['tools'])}</p>
                     </div>
                     <div>
