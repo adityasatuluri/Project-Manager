@@ -77,11 +77,7 @@ def projects_list_page():
                 <style>
                 .streamlit-expanderHeader {
                     background-color: white;
-                    color: black; # Adjust this for expander header color
-                }
-                .streamlit-expanderContent {
-                    background-color: white;
-                    color: black; # Expander content color
+                    color: white; # Adjust this for expander header color
                 }
                 </style>
             """, unsafe_allow_html=True)
