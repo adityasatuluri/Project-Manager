@@ -15,10 +15,7 @@ def get_status_color(status):
 def projects_list_page():
     st.markdown("""
     <style>
-    .stExpander {
-        color:white;
-        background-color: #161b22;
-    }
+    
     .project-container {
         background-color: #161B22;
         border-radius: 6px;
