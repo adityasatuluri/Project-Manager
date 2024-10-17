@@ -17,6 +17,7 @@ def projects_list_page():
     <style>
     .stExpander {
         color:white;
+        background-color: #161b22;
     }
     .project-container {
         background-color: #161B22;
