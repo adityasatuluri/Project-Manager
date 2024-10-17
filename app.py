@@ -38,8 +38,8 @@ st.markdown("""
                     color: white; /* Ensure text is always white */
                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
                 }
-                .stTextInput, .stTextArea, .stButton, .stExpander {
-                    background-color: #161b22;
+                .stTextInput {
+                    
                     color: white; /* Text inside input areas is white */
                     border: 1px solid #30363d;
                     padding: 10px;
