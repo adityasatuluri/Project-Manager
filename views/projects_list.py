@@ -1,7 +1,7 @@
 import streamlit as st
 from database import get_database
 from datetime import datetime
-
+# https://arnaudmiribel.github.io/streamlit-extras/extras/stylable_container/
 def get_status_color(status):
     if status == "Not Started":
         return "#F85149"  # Red (from our refined color palette)
@@ -39,7 +39,8 @@ def projects_list_page():
 
     for project in projects:
         status_color = get_status_color(project['status'])
-        with st.container() as container1:
+        container1=st.container()
+        with container1:
             st.markdown(f"""
             <div class="project-container">
                 <div class="project-header">
