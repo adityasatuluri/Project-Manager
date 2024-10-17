@@ -26,8 +26,8 @@ def set_page_config():
 def set_global_styles():
     st.markdown("""
     <style>
-    .stApp {
-        background-color: #1E1E1E;
+    * {
+        background-color: #080a0a;
         color: #FFFFFF;
     }
     .stButton>button {

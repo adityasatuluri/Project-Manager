@@ -16,7 +16,7 @@ def projects_list_page():
     st.markdown("""
     <style>
     .project-container {
-        background-color: #1E1E1E;
+        background-color: #080a0a;
         border-radius: 10px;
         padding: 20px;
         margin-bottom: 20px;
@@ -68,15 +68,6 @@ def projects_list_page():
 
         status_color = get_status_color(project['status'])
         ss = str(status_color[0:len(status_color)])
-    #     st.markdown(f"""
-    #     <style>
-    #         .streamlit-expanderHeader {{
-    #             background-color: {status_color};  /* Use Python variable here */
-    #             border-radius: 5px;
-    #             color: white;
-    #         }}
-    #     </style>
-    # """, unsafe_allow_html=True)
         with st.expander(project['name']):
             st.markdown(f"""
             <div class="project-header">
