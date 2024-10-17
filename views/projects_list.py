@@ -37,8 +37,9 @@ def projects_list_page():
     db = get_database()
     projects = list(db.projects.find({"created_by": st.session_state.username}))
 
+    #completed------------------------------------------------------------------
     st.markdown(f"""
-        <h1 styles = "background-color: green; color: #0D1117;">Completed</h1>
+        <h2 style="background-color: green; color: #0D1117;">Completed</h2>    
     """, unsafe_allow_html=True)
     for project in [i for i in projects if i['status']=="Completed"]:
         status_color = get_status_color(project['status'])
@@ -69,6 +70,75 @@ def projects_list_page():
             
             if st.button("Edit", key=f"edit_{project['_id']}", use_container_width=True):
                 edit_project(project)
+
+
+    #In Progress------------------------------------------------------------------
+    st.markdown(f"""
+        <h2 style="background-color: yellow; color: #0D1117;">In Progress</h2>    
+    """, unsafe_allow_html=True)
+    for project in [i for i in projects if i['status']=="In Progress"]:
+        status_color = get_status_color(project['status'])
+        container1=st.container()
+        with st.expander(project['name'],expanded=False):
+            st.markdown(f"""
+            <div class="project-container">
+                <div class="project-header">
+                    <span class="project-name">{project['name']}</span>
+                    <span class="project-status" style="background-color: {status_color}; color: #0D1117;">{project['status']}</span>
+                </div>
+                <div>
+                    <p><span class="detail-label">Description:</span> {project['description']}</p>
+                </div>
+                <div class="project-details">
+                    <div>
+                        <p><span class="detail-label">Type:</span> {', '.join(project['type'])}</p>
+                        <p><span class="detail-label">Tools:</span> {', '.join(project['tools'])}</p>
+                    </div>
+                    <div>
+                        <p><span class="detail-label">Start Date:</span> {project['start_date'] or 'Not set'}</p>
+                        <p><span class="detail-label">Deadline:</span> {project['deadline'] or 'Not set'}</p>
+                        <p><span class="detail-label">Purpose:</span> {project['purpose']}</p>
+                    </div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            if st.button("Edit", key=f"edit_{project['_id']}", use_container_width=True):
+                edit_project(project)
+    #Not Started------------------------------------------------------------------
+    st.markdown(f"""
+        <h2 style="background-color: red; color: #0D1117;">Not Started</h2>    
+    """, unsafe_allow_html=True)
+    for project in [i for i in projects if i['status']=="Not Started"]:
+        status_color = get_status_color(project['status'])
+        container1=st.container()
+        with st.expander(project['name'],expanded=False):
+            st.markdown(f"""
+            <div class="project-container">
+                <div class="project-header">
+                    <span class="project-name">{project['name']}</span>
+                    <span class="project-status" style="background-color: {status_color}; color: #0D1117;">{project['status']}</span>
+                </div>
+                <div>
+                    <p><span class="detail-label">Description:</span> {project['description']}</p>
+                </div>
+                <div class="project-details">
+                    <div>
+                        <p><span class="detail-label">Type:</span> {', '.join(project['type'])}</p>
+                        <p><span class="detail-label">Tools:</span> {', '.join(project['tools'])}</p>
+                    </div>
+                    <div>
+                        <p><span class="detail-label">Start Date:</span> {project['start_date'] or 'Not set'}</p>
+                        <p><span class="detail-label">Deadline:</span> {project['deadline'] or 'Not set'}</p>
+                        <p><span class="detail-label">Purpose:</span> {project['purpose']}</p>
+                    </div>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            if st.button("Edit", key=f"edit_{project['_id']}", use_container_width=True):
+                edit_project(project)
+
 
 def edit_project(project):
     st.subheader(f"Edit Project: {project['name']}")
