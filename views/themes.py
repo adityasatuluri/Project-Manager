@@ -3,7 +3,7 @@
 import streamlit as st
 
 def github_dark_theme():
-    st.markdown("""
+    return st.markdown("""
     <style>
     /* General App Background */
     body {
