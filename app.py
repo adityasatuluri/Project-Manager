@@ -3,7 +3,7 @@ from views.new_project import new_project_page
 from views.projects_list import projects_list_page
 from database import get_database
 from utils import hash_password, verify_password
-from themes import apply_custom_css
+from themes import apply_custom_css, apply_custom_css2
 
 # Set page config
 st.set_page_config(
@@ -26,7 +26,7 @@ hide_st_style = """
 """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-st.sidebar.markdown(apply_custom_css(), unsafe_allow_html=True)
+st.sidebar.markdown(apply_custom_css2(), unsafe_allow_html=True)
 
 # Rest of your application code remains the same
 def main():
