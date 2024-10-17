@@ -39,7 +39,7 @@ def projects_list_page():
 
     #completed------------------------------------------------------------------
     st.markdown(f"""
-        <h2 style="background-color: green; color: #0D1117;">Completed</h2>    
+        <h2 style="color: green;">Completed</h2>    
     """, unsafe_allow_html=True)
     for project in [i for i in projects if i['status']=="Completed"]:
         status_color = get_status_color(project['status'])
@@ -52,7 +52,7 @@ def projects_list_page():
                     <span class="project-status" style="background-color: {status_color}; color: #0D1117;">{project['status']}</span>
                 </div>
                 <div>
-                    <p><span class="detail-label">Description:</span> {project['description']}</p>
+                    <div class="desc-text"><span class="detail-label">Description:</span> {project['description']}</div>
                 </div>
                 <div class="project-details">
                     <div>
@@ -74,7 +74,7 @@ def projects_list_page():
 
     #In Progress------------------------------------------------------------------
     st.markdown(f"""
-        <h2 style="background-color: yellow; color: #0D1117;">In Progress</h2>    
+        <h2 style="color: yellow;">In Progress</h2>    
     """, unsafe_allow_html=True)
     for project in [i for i in projects if i['status']=="In Progress"]:
         status_color = get_status_color(project['status'])
@@ -87,7 +87,7 @@ def projects_list_page():
                     <span class="project-status" style="background-color: {status_color}; color: #0D1117;">{project['status']}</span>
                 </div>
                 <div>
-                    <p><span class="detail-label">Description:</span> {project['description']}</p>
+                    <div class="desc-text"><span class="detail-label">Description:</span> {project['description']}</div>
                 </div>
                 <div class="project-details">
                     <div>
@@ -107,7 +107,7 @@ def projects_list_page():
                 edit_project(project)
     #Not Started------------------------------------------------------------------
     st.markdown(f"""
-        <h2 style="background-color: red; color: #0D1117;">Not Started</h2>    
+        <h2 style="color: red;">Not Started</h2>    
     """, unsafe_allow_html=True)
     for project in [i for i in projects if i['status']=="Not Started"]:
         status_color = get_status_color(project['status'])
@@ -120,7 +120,7 @@ def projects_list_page():
                     <span class="project-status" style="background-color: {status_color}; color: #0D1117;">{project['status']}</span>
                 </div>
                 <div>
-                    <p><span class="detail-label">Description:</span> {project['description']}</p>
+                    <div class="desc-text"><span class="detail-label">Description:</span> {project['description']}</div>
                 </div>
                 <div class="project-details">
                     <div>

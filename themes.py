@@ -19,8 +19,8 @@ def apply_custom_css():
 
     /* Buttons */
     .stButton > button {
-        background-color: none;
-        color: none;
+        background-color: #014746;
+        color: white;
         border: none;
         border-radius: 4px;
         padding: 0.5rem 1rem;
@@ -81,17 +81,29 @@ def apply_custom_css():
     }
 
     .project-details {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+        gap: 0.8rem; /* Spacing between elements */
+        margin-top: 0.8rem;
     }
 
     .detail-label {
-        font-weight: bold;
-        color: none;
+        font-weight: 600; /* Slightly bold, not too heavy */
+        font-size: 0.95rem; /* Adjusted size for better readability */
+        color: #007554;
+        margin-bottom: 0.2rem;
+        letter-spacing: 0.5px; /* Slight letter spacing for a modern look */
+        text-transform: uppercase; /* Make it more distinct */
     }
 
+    .desc-text{
+        width:75%;
+    }
+    
     .container1{
         border: 1px solid black;
+    }
+
     }
     </style>
     """
