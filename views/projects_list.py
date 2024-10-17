@@ -25,8 +25,7 @@ def projects_list_page():
             st.markdown("""
                 <style>
                 .streamlit-expander {
-                    background-color: {{status_color}};
-                    color: white; # Adjust this for expander header color
+                    color: {{status_color}};
                 }
                 </style>
             """, unsafe_allow_html=True)
