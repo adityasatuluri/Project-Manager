@@ -90,20 +90,5 @@ def apply_custom_css():
         color: none;
     }
 
-    /* Metrics */
-    .stMetric {
-        background-color: none;
-        padding: 1rem;
-        border-radius: 4px;
-    }
-
-    .stMetric label {
-        color: none;
-    }
-
-    .stMetric .metric-value {
-        color: none;
-        font-size: 1.5rem;
-    }
     </style>
     """
