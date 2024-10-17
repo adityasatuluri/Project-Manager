@@ -1,6 +1,7 @@
 import streamlit as st
 from database import get_database
 from datetime import datetime
+from themes import github_dark_theme
 
 def get_status_color(status):
     if status == "Not Started":
@@ -13,51 +14,6 @@ def get_status_color(status):
         return "#FFFFFF"  # White
 
 def projects_list_page():
-    st.markdown("""
-    <style>
-    .project-container {
-        background-color: #1E1E1E;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        border: 1px solid #333;
-    }
-    .project-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-    .project-name {
-        font-size: 24px;
-        font-weight: bold;
-        color: #FFFFFF;
-    }
-    .project-status {
-        font-weight: bold;
-        padding: 5px 10px;
-        border-radius: 5px;
-    }
-    .project-details {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
-    .detail-label {
-        font-weight: bold;
-        color: #888;
-    }
-    .edit-button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
-    </style>
-    """, unsafe_allow_html=True)
 
     st.title("📋 Projects List")
 
