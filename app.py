@@ -20,24 +20,15 @@ hide_st_style = """
 """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-page_bg_img = f"""
-<style>
-[data-testid="stAppViewContainer"] > .main {{
-background-color: #0d1117;
-background-size: cover;
-background-position: center center;
-background-repeat: no-repeat;
-background-attachment: local;
-}}
-[data-testid="stHeader"] {{
-background: rgba(0,0,0,0);
-}}
-</style>
-"""
+
 
 st.markdown("""
                 <style>
-
+                * {
+                    background-color: #0d1117;
+                    color: white; /* Ensure text is always white */
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+                }
                 .stTextInput {
                     color: white; /* Text inside input areas is white */
                     border: 1px solid #30363d;
