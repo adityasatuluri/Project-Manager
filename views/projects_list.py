@@ -21,7 +21,7 @@ def projects_list_page():
 
     for project in projects:
         status_color = get_status_color(project['status'])
-        with st.container():
+        with st.container() as container1:
             st.markdown(f"""
             <div class="project-container">
                 <div class="project-header">

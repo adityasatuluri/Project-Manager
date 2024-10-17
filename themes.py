@@ -90,5 +90,8 @@ def apply_custom_css():
         color: none;
     }
 
+    .container1{
+        border: 1px solid black;
+    }
     </style>
     """
