@@ -25,7 +25,6 @@ st.set_page_config(
 st.markdown("""
     <style>
     * {
-        background-color: #080a0a;
         color: #FFFFFF;
     }
     .stButton>button {
