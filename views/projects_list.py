@@ -27,7 +27,7 @@ container_style = """
 """
 
 # Display the CSS styles
-st.markdown(container_style, unsafe_allow_html=True
+st.markdown(container_style, unsafe_allow_html=True)
 
 
 def projects_list_page():
