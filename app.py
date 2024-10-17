@@ -26,13 +26,6 @@ colors = {
     "error": "#FA5252",
 }
 
-# Set Streamlit theme
-st.set_page_config(
-    page_title="Project Management App",
-    page_icon="🚀",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
 
 # Custom CSS with Stract-inspired design
 st.markdown(f"""
