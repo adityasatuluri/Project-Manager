@@ -4,57 +4,61 @@ from datetime import datetime
 
 def get_status_color(status):
     if status == "Not Started":
-        return "#FF4136"  # Red
+        return "#F85149"  # Red (from our refined color palette)
     elif status == "In Progress":
-        return "#FFDC00"  # Yellow
+        return "#D29922"  # Yellow (from our refined color palette)
     elif status == "Completed":
-        return "#2ECC40"  # Green
+        return "#2EA043"  # Green (from our refined color palette)
     else:
-        return "#FFFFFF"  # White
+        return "#C9D1D9"  # Default text color
 
 def projects_list_page():
     st.markdown("""
     <style>
     .project-container {
-        background-color: #080a0a;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        border: 1px solid #333;
+        background-color: #161B22;
+        border-radius: 6px;
+        padding: 16px;
+        margin-bottom: 16px;
+        border: 1px solid #30363D;
     }
     .project-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
     }
     .project-name {
-        font-size: 24px;
-        font-weight: bold;
-        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: 600;
+        color: #C9D1D9;
     }
     .project-status {
-        font-weight: bold;
-        padding: 5px 10px;
-        border-radius: 5px;
+        font-weight: 500;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 14px;
     }
     .project-details {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        gap: 12px;
     }
     .detail-label {
-        font-weight: bold;
-        color: #888;
+        font-weight: 500;
+        color: #8B949E;
     }
-    .edit-button {
-        background-color: #4CAF50;
+    .stButton > button {
+        background-color: #6E40C9;
         color: white;
-        padding: 10px 20px;
         border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
+        border-radius: 6px;
+        padding: 8px 16px;
+        font-weight: 500;
+        width: 100%;
+    }
+    .stButton > button:hover {
+        background-color: #8957E5;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -65,25 +69,25 @@ def projects_list_page():
     projects = list(db.projects.find({"created_by": st.session_state.username}))
 
     for project in projects:
-
         status_color = get_status_color(project['status'])
-        ss = str(status_color[0:len(status_color)])
         with st.expander(project['name']):
             st.markdown(f"""
-            <div class="project-header">
-                <span class="project-name">{project['name']}</span>
-                <span class="project-status" style="background-color: {status_color};">{project['status']}</span>
-            </div>
-            <div class="project-details">
-                <div>
-                    <p><span class="detail-label">Type:</span> {', '.join(project['type'])}</p>
-                    <p><span class="detail-label">Description:</span> {project['description']}</p>
-                    <p><span class="detail-label">Tools:</span> {', '.join(project['tools'])}</p>
+            <div class="project-container">
+                <div class="project-header">
+                    <span class="project-name">{project['name']}</span>
+                    <span class="project-status" style="background-color: {status_color}; color: #0D1117;">{project['status']}</span>
                 </div>
-                <div>
-                    <p><span class="detail-label">Start Date:</span> {project['start_date']}</p>
-                    <p><span class="detail-label">Deadline:</span> {project['deadline']}</p>
-                    <p><span class="detail-label">Purpose:</span> {project['purpose']}</p>
+                <div class="project-details">
+                    <div>
+                        <p><span class="detail-label">Type:</span> {', '.join(project['type'])}</p>
+                        <p><span class="detail-label">Description:</span> {project['description']}</p>
+                        <p><span class="detail-label">Tools:</span> {', '.join(project['tools'])}</p>
+                    </div>
+                    <div>
+                        <p><span class="detail-label">Start Date:</span> {project['start_date'] or 'Not set'}</p>
+                        <p><span class="detail-label">Deadline:</span> {project['deadline'] or 'Not set'}</p>
+                        <p><span class="detail-label">Purpose:</span> {project['purpose']}</p>
+                    </div>
                 </div>
             </div>
             """, unsafe_allow_html=True)
@@ -96,13 +100,14 @@ def edit_project(project):
 
     name = st.text_input("Project Name", value=project['name'])
     project_type = st.multiselect(
-            "Project Type", 
-            ["Crossplatform", "Responsive Web App", "Android", "iOS", "PC", "Extension", "Service"]
-        )
+        "Project Type", 
+        ["Crossplatform", "Responsive Web App", "Android", "iOS", "PC", "Extension", "Service"],
+        default=project['type']
+    )
     description = st.text_area("Description", value=project['description'])
     tools = st.text_input("Tools (comma-separated)", value=", ".join(project['tools']))
-    start_date = st.date_input("Start Date", value=datetime.fromisoformat(project['start_date']))
-    deadline = st.date_input("Deadline", value=datetime.fromisoformat(project['deadline']))
+    start_date = st.date_input("Start Date", value=datetime.fromisoformat(project['start_date']) if project['start_date'] else None)
+    deadline = st.date_input("Deadline", value=datetime.fromisoformat(project['deadline']) if project['deadline'] else None)
     purpose = st.text_area("Purpose", value=project['purpose'])
     status = st.selectbox("Status", ["Not Started", "In Progress", "Completed"], index=["Not Started", "In Progress", "Completed"].index(project['status']))
 
@@ -112,9 +117,9 @@ def edit_project(project):
             "name": name,
             "type": project_type,
             "description": description,
-            "tools": [tool.strip() for tool in tools.split(",")],
-            "start_date": start_date.isoformat(),
-            "deadline": deadline.isoformat(),
+            "tools": [tool.strip() for tool in tools.split(",") if tool.strip()],
+            "start_date": start_date.isoformat() if start_date else None,
+            "deadline": deadline.isoformat() if deadline else None,
             "purpose": purpose,
             "status": status,
             "updated_at": datetime.utcnow()
