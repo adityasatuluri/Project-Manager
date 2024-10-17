@@ -13,58 +13,7 @@ def get_status_color(status):
         return "#C9D1D9"  # Default text color
 
 def projects_list_page():
-    st.markdown("""
-    <style>
     
-    .project-container {
-        background-color: #161B22;
-        border-radius: 6px;
-        color:white;
-        padding: 16px;
-        margin-bottom: 16px;
-        border: 1px solid #30363D;
-    }
-    .project-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 12px;
-    }
-    .project-name {
-        font-size: 18px;
-        font-weight: 600;
-        color: #C9D1D9;
-    }
-    .project-status {
-        font-weight: 500;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 14px;
-    }
-    .project-details {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
-    .detail-label {
-        font-weight: 500;
-        color: #8B949E;
-    }
-    .stButton > button {
-        background-color: #6E40C9;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        padding: 8px 16px;
-        font-weight: 500;
-        width: 100%;
-    }
-    .stButton > button:hover {
-        background-color: #8957E5;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
     st.title("📋 Projects List")
 
     db = get_database()
