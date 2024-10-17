@@ -12,6 +12,24 @@ def get_status_color(status):
     else:
         return "#C9D1D9"  # Default text color
 
+container_style = """
+    <style>
+        .container1 {
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .container2 {
+            /* Add styles for Container 2 if needed */
+        }
+    </style>
+"""
+
+# Display the CSS styles
+st.markdown(container_style, unsafe_allow_html=True
+
+
 def projects_list_page():
     
     st.title("📋 Projects List")
