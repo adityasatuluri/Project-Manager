@@ -20,47 +20,67 @@ hide_st_style = """
 """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
+page_bg_img = f"""
+<style>
+[data-testid="stAppViewContainer"] > .main {{
+background-color: #0d1117;
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: local;
+}}
+[data-testid="stHeader"] {{
+background: rgba(0,0,0,0);
+}}
+</style>
+"""
+
 st.markdown("""
                 <style>
-                * {
-                    background-color: #0d1117; /* Background color for the entire app */
-                    color: white; /* Ensure all text is white */
-                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+                .stTextInput {
+                    color: white; /* Text inside input areas is white */
+                    border: 1px solid #30363d;
+                    padding: 10px;
+                    border-radius: 6px;
                 }
-                /* Customize button text */
                 .stButton button {
-                    background-color: #F8331D; /* Red background for button */
+                    background-color: #F8331D;
                     border: none;
-                    color: white; /* Button text color */
+                    color: white;
                     padding: 6px 16px;
                     text-align: center;
                     font-size: 14px;
                     cursor: pointer;
                     border-radius: 6px;
-                    width: 100%; /* Make button fill its container */
+                    width: 100%; /* Make the button fill the container */
                 }
                 .stButton button:hover {
-                    background-color: white; /* Change background on hover */
-                    color: #89251A; /* Dark red text on hover */
+                    background-color: white;
+                    color: #89251A; /* Ensure the text remains dark red instead of black */
                 }
-                /* Customize input fields */
-                .stTextInput input, .stTextArea textarea {
-                    color: white; /* Input text color */
-                    background-color: #30363d; /* Input background color */
+                .stExpander {
                     border: 1px solid #30363d;
-                    padding: 10px;
+                    border-radius: 6px;
+                    box-shadow: 0 1px 3px rgba(27,31,35,.12);
+                }
+                .stTextInput, .stTextArea {
+                    border: 1px solid #30363d;
+                    color: white; /* Text inside text areas is white */
                     border-radius: 6px;
                 }
-                /* Adjusting other text elements */
-                h1, h2, h3, h4, h5, h6 {
+                .stTextArea textarea {
+                    border: 1px solid #30363d;
+                    color: white; /* Text inside textarea is white */
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+                }
+                h3 {
+                    background-color: #0d1117;
                     color: white;
                 }
-                p {
-                    color: white;
-                }
+
                 </style>
                 """, unsafe_allow_html=True)
-
 
 def main():
     if 'logged_in' not in st.session_state:
