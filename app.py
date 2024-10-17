@@ -3,6 +3,7 @@ from views.new_project import new_project_page
 from views.projects_list import projects_list_page
 from database import get_database
 from utils import hash_password, verify_password
+from themes import apply_custom_css
 
 # Set page config
 st.set_page_config(
