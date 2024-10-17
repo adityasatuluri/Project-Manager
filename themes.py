@@ -1,28 +1,26 @@
-# themes.py
-
 def apply_custom_css():
     return """
     <style>
     /* Main app styles */
     .stApp {
-        background-color: #0D1117;
-        color: #C9D1D9;
+        background-color: none;
+        color: none;
     }
 
     /* Sidebar styles */
     .stSideBar {
-        background-color: #161B22;
+        background-color: none;
     }
 
     /* Headers */
     h1, h2, h3 {
-        color: #58A6FF;
+        color: none;
     }
 
     /* Buttons */
     .stButton > button {
-        background-color: #238636;
-        color: white;
+        background-color: none;
+        color: none;
         border: none;
         border-radius: 4px;
         padding: 0.5rem 1rem;
@@ -30,34 +28,34 @@ def apply_custom_css():
     }
 
     .stButton > button:hover {
-        background-color: #2EA043;
+        background-color: none;
     }
 
     /* Input fields */
     .stTextInput > div > div > input,
     .stTextArea > div > div > textarea {
-        background-color: #161B22;
-        color: #C9D1D9;
-        border: 1px solid #30363D;
+        background-color: none;
+        color: none;
+        border: 1px solid none;
     }
 
     /* Select boxes */
     .stSelectbox > div > div > select {
-        background-color: #161B22;
-        color: #C9D1D9;
-        border: 1px solid #30363D;
+        background-color: none;
+        color: none;
+        border: 1px solid none;
     }
 
     /* Expander */
     .streamlit-expanderHeader {
-        background-color: #161B22;
-        color: #C9D1D9;
+        background-color: none;
+        color: none;
     }
 
     /* Project container */
     .project-container {
-        background-color: #161B22;
-        border: 1px solid #30363D;
+        background-color: none;
+        border: 1px solid none;
         border-radius: 4px;
         padding: 1rem;
         margin-bottom: 1rem;
@@ -73,7 +71,7 @@ def apply_custom_css():
     .project-name {
         font-size: 1.2rem;
         font-weight: bold;
-        color: #58A6FF;
+        color: none;
     }
 
     .project-status {
@@ -89,22 +87,22 @@ def apply_custom_css():
 
     .detail-label {
         font-weight: bold;
-        color: #8B949E;
+        color: none;
     }
 
     /* Metrics */
     .stMetric {
-        background-color: #161B22;
+        background-color: none;
         padding: 1rem;
         border-radius: 4px;
     }
 
     .stMetric label {
-        color: #8B949E;
+        color: none;
     }
 
     .stMetric .metric-value {
-        color: #58A6FF;
+        color: none;
         font-size: 1.5rem;
     }
     </style>
