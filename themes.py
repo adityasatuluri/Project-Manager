@@ -5,7 +5,7 @@ def apply_custom_css():
     <style>
     /* Main app styles */
     .stSideBar {
-        background-color: #0D1117;
+        background-color: #dsdsds;
         color: #C9D1D9;
     }
 
