@@ -2,6 +2,13 @@ def apply_custom_css():
     return """
     <style>
     /* Main app styles */
+    @import url('https://fonts.googleapis.com/css2?family=Jura:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+    p, div{
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+    }
+    
     .stApp {
         background-color: none;
         color: none;
@@ -24,6 +31,9 @@ def apply_custom_css():
         border: none;
         border-radius: 4px;
         padding: 0.5rem 1rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
         font-size: 1rem;
     }
 
@@ -69,6 +79,9 @@ def apply_custom_css():
     }
 
     .project-name {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
         font-size: 1.2rem;
         font-weight: bold;
         color: none;
@@ -77,7 +90,10 @@ def apply_custom_css():
     .project-status {
         padding: 0.25rem 0.5rem;
         border-radius: 4px;
-        font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+
     }
 
     .project-details {

@@ -171,4 +171,4 @@ def edit_project(project):
         }
         db.projects.update_one({"_id": project['_id']}, {"$set": updated_project})
         st.success("Project updated successfully!")
-        st.experimental_rerun()
+        st.rerun()

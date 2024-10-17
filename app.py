@@ -5,6 +5,7 @@ from database import get_database
 from utils import hash_password, verify_password
 from themes import apply_custom_css
 
+
 try: 
     # Set page config
     st.set_page_config(
@@ -15,6 +16,8 @@ try:
     )
 
     st.markdown(apply_custom_css(), unsafe_allow_html=True)
+
+    
 
 
     # Hide Streamlit default elements
@@ -37,10 +40,11 @@ try:
             if not st.session_state.logged_in:
                 login()
             else:
+                st.logo("MENU.svg")
                 show_main_app()
         except Exception as e:
             print(f"Exception at main: {e}")
-            st.experimental_rerun()
+            st.rerun()
 
     def login():
         try:
@@ -60,7 +64,7 @@ try:
                         st.session_state.logged_in = True
                         st.session_state.username = username
                         st.success("Logged in successfully!")
-                        st.experimental_rerun()
+                        st.rerun()
                     elif user:
                         st.error("Incorrect password")
                     else:
@@ -70,10 +74,10 @@ try:
                             st.session_state.logged_in = True
                             st.session_state.username = username
                             st.success("New account created and logged in successfully!")
-                            st.experimental_rerun()
+                            st.rerun()
         except Exception as e:
             print(f"Exception at login: {e}")
-            st.experimental_rerun()
+            st.rerun()
 
     def show_main_app():
         try:
@@ -89,10 +93,10 @@ try:
 
             if st.sidebar.button("Logout"):
                 st.session_state.logged_in = False
-                st.experimental_rerun()
+                st.rerun()
         except Exception as e:
             print(f"Exception at show_main_app: {e}")
-            st.experimental_rerun()
+            st.rerun()
 
     def show_dashboard():
         try:
@@ -114,11 +118,11 @@ try:
             # Add more visualizations if needed
         except Exception as e:
             print(f"Exception at show_dashboard: {e}")
-            st.experimental_rerun()
+            st.rerun()
 
     if __name__ == "__main__":
         main()
     
 except Exception as e:
     print(f"Exception at main: {e}")
-    st.experimental_rerun()
+    st.rerun()
