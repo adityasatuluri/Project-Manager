@@ -23,8 +23,7 @@ def set_page_config():
         initial_sidebar_state="expanded",
     )
 
-def set_global_styles():
-    st.markdown("""
+st.markdown("""
     <style>
     * {
         background-color: #080a0a;
@@ -46,9 +45,9 @@ def set_global_styles():
     </style>
     """, unsafe_allow_html=True)
 
+
 def main():
     set_page_config()
-    set_global_styles()
     
     st.sidebar.title("🚀 Project Manager")
 
