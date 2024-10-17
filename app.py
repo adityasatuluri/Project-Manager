@@ -23,28 +23,30 @@ st.set_page_config(
 )
 
 st.markdown("""
-    <style>
-    * {
-        color: #FFFFFF;
-    }
-    .stButton>button {
-        background-color: #4CAF50;
-        color: white;
-        border-radius: 5px;
-    }
-    .stTextInput>div>div>input {
-        background-color: #2C2C2C;
-        color: white;
-    }
-    .stSelectbox>div>div>select {
-        background-color: #2C2C2C;
-        color: white;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
+<style>
+.stApp {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+}
+.stButton>button {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+.stTextInput>div>div>input {
+    background-color: #2C2C2C;
+    color: white;
+}
+.stSelectbox>div>div>select {
+    background-color: #2C2C2C;
+    color: white;
+}
+</style>
+""", unsafe_allow_html=True)
 
 def main():
+    # set_page_config()
+    # set_global_styles()
     
     st.sidebar.title("🚀 Project Manager")
 
