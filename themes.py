@@ -116,10 +116,13 @@ def apply_custom_css():
         width:75%;
     }
     
-    .container1{
-        border: 1px solid black;
+    .desc{
+        padding-top:3vh;
+        padding-bottom: 3vh;
     }
 
-    }
+    .streamlit-expander[open] .expander-label {
+            visibility: hidden; /* This hides the text */
+        }
     </style>
     """

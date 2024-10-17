@@ -51,7 +51,7 @@ def projects_list_page():
                     <span class="project-name">{project['name']}</span>
                     <span class="project-status" style="background-color: {status_color}; color: none;">{project['status']}</span>
                 </div>
-                <div>
+                <div class="desc">
                     <div class="desc-text"><span class="detail-label">Description:</span> {project['description']}</div>
                 </div>
                 <div class="project-details">
@@ -86,7 +86,7 @@ def projects_list_page():
                     <span class="project-name">{project['name']}</span>
                     <span class="project-status" style="background-color: {status_color}; color: none;">{project['status']}</span>
                 </div>
-                <div>
+                <div class="desc">
                     <div class="desc-text"><span class="detail-label">Description:</span> {project['description']}</div>
                 </div>
                 <div class="project-details">
@@ -116,10 +116,10 @@ def projects_list_page():
             st.markdown(f"""
             <div class="project-container">
                 <div class="project-header">
-                    <span class="project-name">{project['name']}</span>
+                    <span class="project-name" style="width:75%">{project['name']}</span>
                     <span class="project-status" style="background-color: {status_color}; color: none;">{project['status']}</span>
                 </div>
-                <div>
+                <div  class="desc">
                     <div class="desc-text"><span class="detail-label">Description:</span> {project['description']}</div>
                 </div>
                 <div class="project-details">
