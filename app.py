@@ -22,7 +22,7 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 
 st.markdown("""
                 <style>
-                .stapp {
+                * {
                     background-color: #0d1117;
                     color: white; /* Ensure text is always white */
                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
