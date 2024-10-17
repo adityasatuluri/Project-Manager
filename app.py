@@ -1,14 +1,3 @@
-# Project Structure
-# project_management_app/
-# ├── app.py
-# ├── config.py
-# ├── database.py
-# ├── views/
-# │   ├── new_project.py
-# │   └── projects_list.py
-# ├── requirements.txt
-# └── utils.py
-
 import streamlit as st
 from views.new_project import new_project_page
 from views.projects_list import projects_list_page
@@ -39,13 +28,13 @@ st.markdown("""
                     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
                 }
                 .stTextInput {
-                    
                     color: white; /* Text inside input areas is white */
                     border: 1px solid #30363d;
                     padding: 10px;
                     border-radius: 6px;
                 }
                 .stButton button {
+                    background-color: #F8331D;
                     border: none;
                     color: white;
                     padding: 6px 16px;
@@ -57,7 +46,7 @@ st.markdown("""
                 }
                 .stButton button:hover {
                     background-color: white;
-                    color: #89251A;
+                    color: #89251A; /* Ensure the text remains dark red instead of black */
                 }
                 .stExpander {
                     border: 1px solid #30363d;
@@ -82,11 +71,6 @@ st.markdown("""
                 """, unsafe_allow_html=True)
 
 def main():
-    # set_page_config()
-    # set_global_styles()
-    
-    st.sidebar.title("🚀 Project Manager")
-
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
 
@@ -142,7 +126,7 @@ def show_dashboard():
     st.title("📊 Project Dashboard")
     db = get_database()
     projects = list(db.projects.find({"created_by": st.session_state.username}))
-    
+
     total_projects = len(projects)
     completed_projects = sum(1 for p in projects if p['status'] == 'Completed')
     ongoing_projects = sum(1 for p in projects if p['status'] == 'In Progress')
@@ -154,7 +138,7 @@ def show_dashboard():
     col3.metric("In Progress", ongoing_projects)
     col4.metric("Not Started", not_started_projects)
 
-    # You can add more visualizations here, such as charts or graphs
+    # Add more visualizations if needed
 
 if __name__ == "__main__":
     main()
