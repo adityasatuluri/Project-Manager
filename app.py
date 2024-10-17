@@ -95,14 +95,13 @@ try:
                     elif user:
                         st.error("Incorrect password")
                     else:
-                        if st.button("Create New Account"):
-                            hashed_password = hash_password(password)
-                            db.users.insert_one({"username": username, "password": hashed_password})
-                            st.session_state.logged_in = True
-                            st.session_state.username = username
-                            set_session_cookie("username", username)  # Store new session in cookies
-                            st.success("New account created and logged in successfully!")
-                            st.rerun()
+                        hashed_password = hash_password(password)
+                        db.users.insert_one({"username": username, "password": hashed_password})
+                        st.session_state.logged_in = True
+                        st.session_state.username = username
+                        set_session_cookie("username", username)  # Store new session in cookies
+                        st.success("New account created and logged in successfully!")
+                        st.rerun()
         except Exception as e:
             print(f"Exception at login: {e}")
             st.rerun()
