@@ -37,7 +37,7 @@ def projects_list_page():
     db = get_database()
     projects = list(db.projects.find({"created_by": st.session_state.username}))
 
-    for project in projects:
+    for project in [i for i in projects if i['status']=="Completed"]:
         status_color = get_status_color(project['status'])
         container1=st.container()
         with st.expander(project['name'],expanded=False):
