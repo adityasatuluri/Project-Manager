@@ -18,6 +18,7 @@ def projects_list_page():
     .project-container {
         background-color: #161B22;
         border-radius: 6px;
+        color:white;
         padding: 16px;
         margin-bottom: 16px;
         border: 1px solid #30363D;
