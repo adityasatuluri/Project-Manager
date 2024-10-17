@@ -138,10 +138,7 @@ st.markdown(f"""
     .stCheckbox > label > div[role="checkbox"]::before {{
         background-color: var(--primary-color) !important;
     }}
-    .stExpander {{
-        color:white;
-        background-color: #161b22;
-    }}
+    
 </style>
 """, unsafe_allow_html=True)
 

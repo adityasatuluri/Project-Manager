@@ -73,6 +73,18 @@ def projects_list_page():
     for project in projects:
         status_color = get_status_color(project['status'])
         with st.expander(project['name']):
+            st.markdown("""
+                <style>
+                .streamlit-expanderHeader {
+                    background-color: white;
+                    color: black; # Adjust this for expander header color
+                }
+                .streamlit-expanderContent {
+                    background-color: white;
+                    color: black; # Expander content color
+                }
+                </style>
+            """, unsafe_allow_html=True)
             st.markdown(f"""
             <div class="project-container">
                 <div class="project-header">
