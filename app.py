@@ -22,14 +22,14 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-    hide_main_content_style = """
-                <style>
-                .st-emotion-cache-1jicfl2{
-                     padding: 0rem 1rem 10rem;
-                }
-                </style>
-                """
-    st.markdown(hide_main_content_style, unsafe_allow_html=True)
+hide_main_content_style = """
+    <style>
+    .st-emotion-cache-1jicfl2{
+            padding: 0rem 1rem 10rem;
+    }
+    </style>
+    """
+st.markdown(hide_main_content_style, unsafe_allow_html=True)
 
 st.markdown("""
 <style>
