@@ -49,7 +49,7 @@ def projects_list_page():
             <div class="project-container">
                 <div class="project-header">
                     <span class="project-name">{project['name']}</span>
-                    <span class="project-status" style="background-color: {status_color}; color: #0D1117;">{project['status']}</span>
+                    <span class="project-status" style="background-color: {status_color}; color: none;">{project['status']}</span>
                 </div>
                 <div>
                     <div class="desc-text"><span class="detail-label">Description:</span> {project['description']}</div>
@@ -84,7 +84,7 @@ def projects_list_page():
             <div class="project-container">
                 <div class="project-header">
                     <span class="project-name">{project['name']}</span>
-                    <span class="project-status" style="background-color: {status_color}; color: #0D1117;">{project['status']}</span>
+                    <span class="project-status" style="background-color: {status_color}; color: none;">{project['status']}</span>
                 </div>
                 <div>
                     <div class="desc-text"><span class="detail-label">Description:</span> {project['description']}</div>
@@ -117,7 +117,7 @@ def projects_list_page():
             <div class="project-container">
                 <div class="project-header">
                     <span class="project-name">{project['name']}</span>
-                    <span class="project-status" style="background-color: {status_color}; color: #0D1117;">{project['status']}</span>
+                    <span class="project-status" style="background-color: {status_color}; color: none;">{project['status']}</span>
                 </div>
                 <div>
                     <div class="desc-text"><span class="detail-label">Description:</span> {project['description']}</div>
