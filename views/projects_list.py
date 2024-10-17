@@ -1,7 +1,6 @@
 import streamlit as st
 from database import get_database
 from datetime import datetime
-from theme import github_dark_theme
 
 def get_status_color(status):
     if status == "Not Started":
@@ -14,8 +13,6 @@ def get_status_color(status):
         return "#FFFFFF"  # White
 
 def projects_list_page():
-    # Apply the dark theme from theme.py
-    github_dark_theme()
 
     st.title("📋 Projects List")
 
@@ -23,8 +20,18 @@ def projects_list_page():
     projects = list(db.projects.find({"created_by": st.session_state.username}))
 
     for project in projects:
+
         status_color = get_status_color(project['status'])
-        
+        ss = str(status_color[0:len(status_color)])
+    #     st.markdown(f"""
+    #     <style>
+    #         .streamlit-expanderHeader {{
+    #             background-color: {status_color};  /* Use Python variable here */
+    #             border-radius: 5px;
+    #             color: white;
+    #         }}
+    #     </style>
+    # """, unsafe_allow_html=True)
         with st.expander(project['name']):
             st.markdown(f"""
             <div class="project-header">
@@ -44,7 +51,7 @@ def projects_list_page():
                 </div>
             </div>
             """, unsafe_allow_html=True)
-
+            
             if st.button("Edit", key=f"edit_{project['_id']}", use_container_width=True):
                 edit_project(project)
 
