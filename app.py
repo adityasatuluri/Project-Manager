@@ -4,6 +4,7 @@ from views.projects_list import projects_list_page
 from database import get_database
 from utils import hash_password, verify_password
 
+# Set page config
 st.set_page_config(
     page_title="Project Management App",
     page_icon="🚀",
@@ -11,6 +12,119 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# Define Stract-inspired color palette
+colors = {
+    "background": "#141517",
+    "surface": "#1E2024",
+    "primary": "#676CDB",
+    "secondary": "#343A40",
+    "text": "#E9ECEF",
+    "text_secondary": "#ADB5BD",
+    "border": "#343A40",
+    "success": "#37B24D",
+    "warning": "#FAB005",
+    "error": "#FA5252",
+}
+
+# Set Streamlit theme
+st.set_page_config(
+    page_title="Project Management App",
+    page_icon="🚀",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+# Custom CSS with Stract-inspired design
+st.markdown(f"""
+<style>
+    :root {{
+        --background-color: {colors['background']};
+        --surface-color: {colors['surface']};
+        --primary-color: {colors['primary']};
+        --secondary-color: {colors['secondary']};
+        --text-color: {colors['text']};
+        --text-secondary-color: {colors['text_secondary']};
+        --border-color: {colors['border']};
+    }}
+    
+    .stApp {{
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }}
+    
+    .stTextInput > div > div > input {{
+        background-color: var(--surface-color);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+    }}
+    
+    .stTextInput > label {{
+        color: var(--text-secondary-color);
+    }}
+    
+    .stButton > button {{
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        font-weight: 600;
+    }}
+    
+    .stButton > button:hover {{
+        background-color: var(--primary-color);
+        opacity: 0.8;
+    }}
+    
+    .stHeader {{
+        background-color: var(--surface-color);
+        color: var(--text-color);
+    }}
+    
+    .stSidebar {{
+        background-color: var(--surface-color);
+        border-right: 1px solid var(--border-color);
+    }}
+    
+    .stSidebar .stRadio > label {{
+        color: var(--text-secondary-color);
+    }}
+    
+    .stMetric {{
+        background-color: var(--surface-color);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1rem;
+    }}
+    
+    .stMetric > div {{
+        color: var(--text-color);
+    }}
+    
+    .stMetric > div:first-child {{
+        color: var(--text-secondary-color);
+    }}
+    
+    h1, h2, h3, h4, h5, h6 {{
+        color: var(--text-color);
+    }}
+    
+    .stSuccess {{
+        background-color: {colors['success']};
+    }}
+    
+    .stWarning {{
+        background-color: {colors['warning']};
+    }}
+    
+    .stError {{
+        background-color: {colors['error']};
+    }}
+</style>
+""", unsafe_allow_html=True)
+
+# Hide Streamlit default elements
 hide_st_style = """
     <style>
     #MainMenu {visibility: hidden;}
@@ -20,62 +134,7 @@ hide_st_style = """
 """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-st.markdown("""
-    <style>
-    * {
-        background-color: #0d1117;
-        color: white;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    }
-    .stTextInput {
-        color: white;
-        border: 1px solid #30363d;
-        padding: 10px;
-        border-radius: 6px;
-    }
-    .stButton button {
-        background-color: #F8331D;
-        border: none;
-        color: white;
-        padding: 6px 16px;
-        text-align: center;
-        font-size: 14px;
-        cursor: pointer;
-        border-radius: 6px;
-        width: 100%;
-    }
-    .stButton button:hover {
-        background-color: white;
-        color: #89251A;
-    }
-    .stExpander {
-        border: 1px solid #30363d;
-        border-radius: 6px;
-        box-shadow: 0 1px 3px rgba(27,31,35,.12);
-    }
-    .stTextInput, .stTextArea {
-        border: 1px solid #30363d;
-        color: white;
-        border-radius: 6px;
-    }
-    .stTextArea textarea {
-        border: 1px solid #30363d;
-        color: white;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    }
-    h3 {
-        background-color: #0d1117;
-        color: white;
-    }
-    .stTextInput > label {
-        background-color: transparent;
-    }
-    .stTextInput > div > div > input {
-        background-color: transparent;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
+# Rest of your application code remains the same
 def main():
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
