@@ -25,7 +25,7 @@ def projects_list_page():
             st.markdown("""
                 <style>
                 .stExpander {
-                    color: {{status_color}};
+                    color: green;
                 }
                 </style>
             """, unsafe_allow_html=True)
